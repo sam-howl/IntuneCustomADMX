@@ -1,0 +1,2 @@
+# IntuneCustomADMX
+Intune custom ADMX
