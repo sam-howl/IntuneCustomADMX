@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Version 0.1-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" 
+    xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+    <policyNamespaces>
+        <target prefix="Adobe Reader DC" namespace="Adobe.Policies.ReaderDC" />
+        <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+    </policyNamespaces>
+    <resources minRequiredRevision="1.0" />
+
+    <supportedOn>
+        <definitions>
+            <definition displayName="$(string.SupportedSinceReaderDC)" name="SupportedSinceReaderDC"/>
+            <definition displayName="$(string.SupportedSinceReader11)" name="SupportedSinceReader11"/>
+            <definition displayName="$(string.SupportedSinceReader10)" name="SupportedSinceReader10"/>
+            <definition displayName="$(string.SupportedSinceReader95)" name="SupportedSinceReader95"/>
+            <definition displayName="$(string.SupportedSinceReader9)" name="SupportedSinceReader9"/>
+            <definition displayName="$(string.SupportedSinceReader81)" name="SupportedSinceReader81"/>
+            <definition displayName="$(string.SupportedSinceReader80)" name="SupportedSinceReader80"/>
+            <definition displayName="$(string.SupportedSinceReader70)" name="SupportedSinceReader70"/>
+        </definitions>
+    </supportedOn>
+
+    <categories>
+        <category name="AdobeReaderDCCategory" displayName="$(string.AdobeReaderDCCategory)" />
+        <category name="FeatureLockdownCategory" displayName="$(string.FeatureLockdownCategory)">
+            <parentCategory ref="AdobeReaderDCCategory" />
+        </category>
+    </categories>
+    <policies>
+        <policy name="EnableFlash" class="Machine" displayName="$(string.EnableFlash)" explainText="$(string.EnableFlash_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" valueName="bEnableFlash">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReader95"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy name="DisableJavaScript" class="Machine" displayName="$(string.DisableJavaScript)" explainText="$(string.DisableJavaScript_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" valueName="bDisableJavaScript">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReader95"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.Updater)" explainText="$(string.Updater_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="Updater" valueName="bUpdater">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleAdobeDocumentServices)" explainText="$(string.ToggleAdobeDocumentServices_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleAdobeDocumentServices" valueName="bToggleAdobeDocumentServices">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleSendACopy)" explainText="$(string.ToggleSendACopy_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleSendACopy" valueName="bToggleSendACopy">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleFillSign)" explainText="$(string.ToggleFillSign_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleFillSign" valueName="bToggleFillSign">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleManageSign)" explainText="$(string.ToggleManageSign_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleManageSign" valueName="bToggleManageSign">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleAdobeSign)" explainText="$(string.ToggleAdobeSign_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleAdobeSign" valueName="bToggleAdobeSign">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleFSSSignatureSaving)" explainText="$(string.ToggleFSSSignatureSaving_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleFSSSignatureSaving" valueName="bToggleFSSSignatureSaving">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleSendAndTrack)" explainText="$(string.ToggleSendAndTrack_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleSendAndTrack" valueName="bToggleSendAndTrack">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.SendMailShareRedirection)" explainText="$(string.SendMailShareRedirection_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="SendMailShareRedirection" valueName="bSendMailShareRedirection">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.TogglePrefsSync)" explainText="$(string.TogglePrefsSync_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="TogglePrefsSync" valueName="bTogglePrefsSync">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ShowScanTabInHomeView)" explainText="$(string.ShowScanTabInHomeView_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ShowScanTabInHomeView" valueName="bShowScanTabInHomeView">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleNotifications)" explainText="$(string.ToggleNotifications_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleNotifications" valueName="bToggleNotifications">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleNotificationToasts)" explainText="$(string.ToggleNotificationToasts_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleNotificationToasts" valueName="bToggleNotificationToasts">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.EnableBellButton)" explainText="$(string.EnableBellButton_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="EnableBellButton" valueName="bEnableBellButton">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleDocumentCloud)" explainText="$(string.ToggleDocumentCloud_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleDocumentCloud" valueName="bToggleDocumentCloud">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleWebConnectors)" explainText="$(string.ToggleWebConnectors_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleWebConnectors" valueName="bToggleWebConnectors">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.BoxConnectorEnabled)" explainText="$(string.BoxConnectorEnabled_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="BoxConnectorEnabled" valueName="bBoxConnectorEnabled">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.DropboxConnectorEnabled)" explainText="$(string.DropboxConnectorEnabled_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="DropboxConnectorEnabled" valueName="bDropboxConnectorEnabled">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.OneDriveConnectorEnabled)" explainText="$(string.bOneDriveConnectorEnabled_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="OneDriveConnectorEnabled" valueName="bOneDriveConnectorEnabled">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.GoogleDriveConnectorEnabled)" explainText="$(string.GoogleDriveConnectorEnabled_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="GoogleDriveConnectorEnabled" valueName="bGoogleDriveConnectorEnabled">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleAdobeReview)" explainText="$(string.ToggleAdobeReview_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="ToggleAdobeReview" valueName="bToggleAdobeReview">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.EnableReviewPromote)" explainText="$(string.EnableReviewPromote_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="EnableReviewPromote" valueName="bEnableReviewPromote">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.AcroSuppressOpenInReader)" explainText="$(string.AcroSuppressOpenInReader_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="AcroSuppressOpenInReader" valueName="bAcroSuppressOpenInReader">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.SuppressSignOut)" explainText="$(string.SuppressSignOut_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="SuppressSignOut" valueName="bSuppressSignOut">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.DisableThumbnailPreviewHandler)" explainText="$(string.DisableThumbnailPreviewHandler_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="DisableThumbnailPreviewHandler" valueName="bDisableThumbnailPreviewHandler">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleToDoTiles)" explainText="$(string.ToggleToDoTiles_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ToggleToDoTiles" valueName="bToggleToDoTiles">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleFTE)" explainText="$(string.ToggleFTE_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ToggleFTE" valueName="bToggleFTE">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleToDoList)" explainText="$(string.ToggleToDoList_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ToggleToDoList" valueName="bToggleToDoList">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleShareFeedback)" explainText="$(string.ToggleShareFeedback_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ToggleShareFeedback" valueName="bToggleShareFeedback">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.MergeMenuBar)" explainText="$(string.MergeMenuBar_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="MergeMenuBar" valueName="bMergeMenuBar">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.MixRecentFilesFeatureLockDown)" explainText="$(string.MixRecentFilesFeatureLockDown_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="MixRecentFilesFeatureLockDown" valueName="bMixRecentFilesFeatureLockDown">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ShouldUseScalableCursor)" explainText="$(string.ShouldUseScalableCursor_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ShouldUseScalableCursor" valueName="bShouldUseScalableCursor">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ShowEbookMenu)" explainText="$(string.ShowEbookMenu_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ShowEbookMenu" valueName="bShowEbookMenu">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.CommercialPDF)" explainText="$(string.CommercialPDF_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="CommercialPDF" valueName="bCommercialPDF">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.WinCacheSessionHandles)" explainText="$(string.WinCacheSessionHandles_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cSecurity\cPPKHandler" name="WinCacheSessionHandles" valueName="bWinCacheSessionHandles">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.RegisterProduct)" explainText="$(string.RegisterProduct_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="RegisterProduct" valueName="bRegisterProduct">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ShowAdsAllow)" explainText="$(string.ShowAdsAllow_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ShowAdsAllow" valueName="bShowAdsAllow">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.FindMoreWorkflowsOnline)" explainText="$(string.FindMoreWorkflowsOnline_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="FindMoreWorkflowsOnline" valueName="bFindMoreWorkflowsOnline">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.FindMoreCustomizationsOnline)" explainText="$(string.FindMoreCustomizationsOnline_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="FindMoreCustomizationsOnline" valueName="bFindMoreCustomizationsOnline">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.EnablePVCertificateBasedTrust)" explainText="$(string.EnablePVCertificateBasedTrust_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="EnablePVCertificateBasedTrust" valueName="bEnablePVCertificateBasedTrust">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.DisableOnBehalfOfText)" explainText="$(string.DisableOnBehalfOfText_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="DisableOnBehalfOfText" valueName="bDisableOnBehalfOfText">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.DisablePDFRedirectionActions)" explainText="$(string.DisablePDFRedirectionActions_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="DisablePDFRedirectionActions" valueName="bDisablePDFRedirectionActions">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleDCAppCenter)" explainText="$(string.ToggleDCAppCenter_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ToggleDCAppCenter" valueName="bToggleDCAppCenter">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ShowRhpToolSearch)" explainText="$(string.ShowRhpToolSearch_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ShowRhpToolSearch" valueName="bShowRhpToolSearch">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.AcroSuppressUpsell)" explainText="$(string.AcroSuppressUpsell_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="AcroSuppressUpsell" valueName="bAcroSuppressUpsell">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.PurchaseAcro)" explainText="$(string.PurchaseAcro_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="PurchaseAcro" valueName="bPurchaseAcro">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ReaderRetentionExperiment)" explainText="$(string.ReaderRetentionExperiment_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ReaderRetentionExperiment" valueName="bReaderRetentionExperiment">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.EnableTrialistLaunchCard)" explainText="$(string.EnableTrialistLaunchCard_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="EnableTrialistLaunchCard" valueName="bEnableTrialistLaunchCard">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.ToggleSophiaWebInfra)" explainText="$(string.ToggleSophiaWebInfra_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="ToggleSophiaWebInfra" valueName="bToggleSophiaWebInfra">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.HasAcrobatConsent)" explainText="$(string.HasAcrobatConsent_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="HasAcrobatConsent" valueName="bHasAcrobatConsent">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.DisablePDFHandlerSwitching)" explainText="$(string.DisablePDFHandlerSwitching_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="DisablePDFHandlerSwitching" valueName="bDisablePDFHandlerSwitching">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.EnableAcrobatPromptForDocOpen)" explainText="$(string.EnableAcrobatPromptForDocOpen_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="EnableAcrobatPromptForDocOpen" valueName="bEnableAcrobatPromptForDocOpen">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.TogglePDFOwnershipToasts)" explainText="$(string.TogglePDFOwnershipToasts_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown\cServices" name="TogglePDFOwnershipToasts" valueName="bTogglePDFOwnershipToasts">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.EnableContextualTips)" explainText="$(string.EnableContextualTips_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="EnableContextualTips" valueName="bEnableContextualTips">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.EnableSmartFind)" explainText="$(string.EnableSmartFind_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="EnableSmartFind" valueName="bEnableSmartFind">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.EnableContextualToolbar)" explainText="$(string.EnableContextualToolbar_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="EnableContextualToolbar" valueName="bEnableContextualToolbar">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy class="Machine" displayName="$(string.OrganizePagesFromThumbnails)" explainText="$(string.OrganizePagesFromThumbnails_Explain)" key="Software\WOW6432Node\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" name="OrganizePagesFromThumbnails" valueName="bOrganizePagesFromThumbnails">
+            <parentCategory ref="FeatureLockdownCategory"/>
+            <supportedOn ref="SupportedSinceReaderDC"/>
+            <enabledValue>
+                <decimal value="0"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="1"/>
+            </disabledValue>
+        </policy>
+    </policies>
+</policyDefinitions>
