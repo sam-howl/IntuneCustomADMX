@@ -5,7 +5,7 @@ A collection of ADMX files that can be used to create custom device configuratio
 Manage Syntaro Application Management settings over Microsoft Intune with a custom device configuration profile.
 Find more information about the possible settings in the [Syntaro Wiki](https://wiki.syntaro.com/index.php?title=Application_Management_Settings "Syntaro Wiki").
 
-Seperate wiki entry regarding a custom Syntaro Application Managment device configuration profile in Microsoft Intune is coming soon.
+Wiki entry regarding a custom Syntaro Application Managment device configuration profile in Microsoft Intune is coming soon.
 
 ## Adobe Reader DC
 Manage Adobe Reader DC settings over Microsoft Intune with a custom device configuration profile.
