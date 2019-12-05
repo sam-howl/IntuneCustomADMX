@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Version 0.1-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" 
+    xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+    <policyNamespaces>
+        <target prefix="ApplicationManagement" namespace="Syntaro.Policies.ApplicationManagement" />
+        <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+    </policyNamespaces>
+    <resources minRequiredRevision="1.0" />
+
+    <supportedOn>
+        <definitions>
+            <definition displayName="$(string.SupportedSinceBeginning)" name="SupportedSinceBeginning"/>
+        </definitions>
+    </supportedOn>
+
+    <categories>
+        <category name="SyntaroCategory" displayName="$(string.SyntaroCategory)" />
+        <category name="ApplicationManagementCategory" displayName="$(string.ApplicationManagementCategory)">
+            <parentCategory ref="SyntaroCategory" />
+        </category>
+    </categories>
+    <policies>
+        <policy name="RuckZuckUpdateAllEnabled" class="Machine" displayName="$(string.RuckZuckUpdateAllEnabled)" explainText="$(string.RuckZuckUpdateAllEnabled_Explain)" key="Software\Syntaro\ApplicationManagement" valueName="RuckZuckUpdateAllEnabled">
+            <parentCategory ref="ApplicationManagementCategory"/>
+            <supportedOn ref="SupportedSinceBeginning"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy name="RemoteSignedPolicy" class="Machine" displayName="$(string.RemoteSignedPolicy)" explainText="$(string.RemoteSignedPolicy_Explain)" key="Software\Syntaro\ApplicationManagement" valueName="RemoteSignedPolicy">
+            <parentCategory ref="ApplicationManagementCategory"/>
+            <supportedOn ref="SupportedSinceBeginning"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy name="DisableCloudTelemetry" class="Machine" displayName="$(string.DisableCloudTelemetry)" explainText="$(string.DisableCloudTelemetry_Explain)" key="Software\Syntaro\ApplicationManagement" valueName="DisableCloudTelemetry">
+            <parentCategory ref="ApplicationManagementCategory"/>
+            <supportedOn ref="SupportedSinceBeginning"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy name="LogWindowsEvent" class="Machine" displayName="$(string.LogWindowsEvent)" explainText="$(string.LogWindowsEvent_Explain)" key="Software\Syntaro\ApplicationManagement" valueName="LogWindowsEvent">
+            <parentCategory ref="ApplicationManagementCategory"/>
+            <supportedOn ref="SupportedSinceBeginning"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy name="LogFile" class="Machine" displayName="$(string.LogFile)" explainText="$(string.LogFile_Explain)" key="Software\Syntaro\ApplicationManagement" valueName="LogFile">
+            <parentCategory ref="ApplicationManagementCategory"/>
+            <supportedOn ref="SupportedSinceBeginning"/>
+            <enabledValue>
+                <decimal value="1"/>
+            </enabledValue>
+            <disabledValue>
+                <decimal value="0"/>
+            </disabledValue>
+        </policy>
+        <policy name="RuckZuckUpdateExcludedApps" class="Machine" displayName="$(string.RuckZuckUpdateExcludedApps)" explainText="$(string.RuckZuckUpdateExcludedApps_Explain)" key="Software\Syntaro\ApplicationManagement" valueName="RuckZuckUpdateExcludedApps">
+            <parentCategory ref="ApplicationManagementCategory"/>
+            <supportedOn ref="SupportedSinceBeginning"/>
+            <elements>
+                <text id="RuckZuckUpdateExcludedApps" maxLength="1000000" valueName="RuckZuckUpdateExcludedApps" />
+            </elements>
+        </policy>
+        <policy name="BranchCacheServerUrl" class="Machine" displayName="$(string.BranchCacheServerUrl)" explainText="$(string.BranchCacheServerUrl_Explain)" key="Software\Syntaro\ApplicationManagement" valueName="BranchCacheServerUrl">
+            <parentCategory ref="ApplicationManagementCategory"/>
+            <supportedOn ref="SupportedSinceBeginning"/>
+            <elements>
+                <text id="BranchCacheServerUrl" maxLength="1000000" valueName="BranchCacheServerUrl" />
+            </elements>
+        </policy>
+        <policy name="LogLevel" class="Machine" displayName="$(string.LogLevel)" explainText="$(string.LogLevel_Explain)" key="Software\Syntaro\ApplicationManagement" valueName="LogLevel">
+            <parentCategory ref="ApplicationManagementCategory"/>
+            <supportedOn ref="SupportedSinceBeginning"/>
+            <elements>
+                <enum id="LogLevel" valueName="LogLevel">
+                    <item displayName="$(string.LogLevel_Debug)">
+                        <value>
+                            <decimal value="0"/>
+                        </value>
+                    </item>
+                    <item displayName="$(string.LogLevel_Info)">
+                        <value>
+                            <decimal value="1"/>
+                        </value>
+                    </item>
+                    <item displayName="$(string.LogLevel_Warning)">
+                        <value>
+                            <decimal value="2"/>
+                        </value>
+                    </item>
+                </enum>
+            </elements>
+        </policy>
+    </policies>
+</policyDefinitions>
